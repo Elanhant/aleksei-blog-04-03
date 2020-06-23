@@ -85,9 +85,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        ..nonexistingFragment
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug23 } }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html
